@@ -56,14 +56,14 @@ nav {
   padding: var(--espaco-sm) var(--espaco-md);
 }
 
-nav > ul {
-    display: flex;
-    justify-content: center;
-    gap: var(--espaco-md);
-    flex: 1;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+nav>ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--espaco-md);
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 #titulo-cadastro {
@@ -71,8 +71,8 @@ nav > ul {
 }
 
 .tema-escuro {
-    background-color: #212121;
-    color: #ffffff;
+  background-color: #212121;
+  color: #ffffff;
 }
 
 /* Imagens */
@@ -118,6 +118,11 @@ footer {
 /* ==================================================
    3. PÁGINA INICIAL
    ================================================== */
+
+.tema-escuro {
+  background-color: #212121;
+  color: #ffffff;
+}
 
 .pagina-inicial main {
   display: grid;
