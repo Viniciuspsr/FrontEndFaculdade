@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nome da ONG</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js" defer></script>
+</head>
+
+<body class="pagina-inicial">
+
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#">Nome da ONG</a>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+      <label for="menu-toggle" class="menu">☰</label>
+
+      <ul>
+        <li>
+          <a href="#inicio" id="link-inicio">Início</a>
+        </li>
+
+        <li>
+          <a href="#projetos" id="link-projetos">Projetos</a>
+        </li>
+
+        <li>
+          <a href="cadastro.html">Cadastro</a>
+        </li>
+      </ul>
+
+      <button id="botao-tema" type="button">
+        Modo escuro
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="app">
+
+
+      <section class="secao-principal">
+        <div class="conteudo-principal">
+          <h1>Transformando vidas</h1>
+
+          <p>
+            Nossa ONG trabalha para promover mudanças positivas
+            na comunidade e ajudar quem mais precisa.
+          </p>
+        </div>
+
+        <div class="imagem-placeholder">
+          <img src="../imagens/imagem_ong.jpg" alt="Imagem da ONG">
+        </div>
+      </section>
+
+      <section class="projetos">
+        <h2>Nossos projetos</h2>
+
+        <div class="lista-projetos">
+
+          <article class="projeto">
+            <span class="badge">Ativo</span>
+            <h3>Projeto Social</h3>
+            <p>
+              Descrição do primeiro projeto da organização.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim excepturi praesentium magnam omnis dolorum
+              rerum impedit a eaque ab consequuntur dignissimos non placeat distinctio sapiente incidunt, maxime
+              obcaecati
+              nesciunt! Soluta?
+            </p>
+            <button type="button" class="btn-compartilhar">
+              Compartilhar
+            </button>
+          </article>
+          <div class="toast" role="status">
+            Link do projeto copiado!
+          </div>
+
+          <article class="projeto">
+            <span class="badge-novo">Novo</span>
+            <h3>Projeto Educação</h3>
+            <p>
+              Descrição do segundo projeto da organização.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, pariatur necessitatibus! Repellat
+              deserunt
+              esse voluptatum odit, repudiandae consectetur consequatur nobis non iure. Cum distinctio deserunt fuga aut
+              est possimus exercitationem!
+            </p>
+
+            <button type="button" class="btn-voluntario">
+              Quero participar
+            </button>
+
+          </article>
+
+          <div class="modal" role="dialog" aria-modal="true">
+            <div class="modal-conteudo">
+              <h2>Participar do projeto</h2>
+
+              <p>
+                Deseja participar deste projeto?
+              </p>
+
+              <button type="button" class="btn-cancelar">
+                Cancelar
+              </button>
+
+              <button type="button" class="btn-confirmar">
+                Confirmar
+              </button>
+            </div>
+          </div>
+
+          <article class="projeto">
+            <span class="badge">Ativo</span>
+            <h3>Projeto Meio Ambiente</h3>
+            <p>
+              Descrição do terceiro projeto da organização.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus beatae perferendis quibusdam ipsam
+              doloribus sint fugit dolorem non rem quod, quos neque animi a id quaerat doloremque quisquam tenetur
+              numquam?
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="sobre">
+        <h2>Sobre a ONG</h2>
+
+        <p>
+          Somos uma organização dedicada a desenvolver ações
+          sociais e contribuir para uma comunidade melhor.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Nome da ONG</p>
+    <p>contato@exemplo.com</p>
+  </footer>
+
+</body>
+
+</html>

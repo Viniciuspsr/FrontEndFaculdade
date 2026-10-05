@@ -1,0 +1,355 @@
+/* ==================================================
+   1. DESIGN SYSTEM
+   ================================================== */
+
+:root {
+  /* Cores da identidade visual */
+  --cor-primaria: #003B7A;
+  --cor-primaria-escura: #002B5C;
+  --cor-primaria-clara: #E6F0FA;
+  --cor-secundaria: #00AEEF;
+  --cor-secundaria-escura: #0077A8;
+  --cor-neutra-escura: #212121;
+  --cor-neutra-media: #757575;
+  --cor-neutra-clara: #F5F5F5;
+  --cor-branca: #FFFFFF;
+
+  /* Tipografia */
+  --fonte-xs: 0.75rem;
+  --fonte-sm: 0.875rem;
+  --fonte-md: 1rem;
+  --fonte-lg: 1.5rem;
+  --fonte-xl: 2rem;
+
+  /* Espaçamentos */
+  --espaco-xs: 0.25rem;
+  --espaco-sm: 0.5rem;
+  --espaco-md: 1rem;
+  --espaco-lg: 1.5rem;
+  --espaco-xl: 2rem;
+
+  /* Cores de feedback */
+  --cor-sucesso: #2E7D32;
+  --cor-erro: #C62828;
+
+}
+
+
+/* ==================================================
+   2. ESTILOS GERAIS DO SITE
+   ================================================== */
+
+/* Cabeçalho e navegação */
+
+header {
+  background-color: var(--cor-primaria);
+}
+
+header a {
+  color: var(--cor-branca);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaco-sm) var(--espaco-md);
+}
+
+nav > ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--espaco-md);
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#titulo-cadastro {
+  text-align: center
+}
+
+.tema-escuro {
+    background-color: #212121;
+    color: #ffffff;
+}
+
+/* Imagens */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Rodapé */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#form-cadastro {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+#form-cadastro label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+#form-cadastro input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.mensagem-erro {
+  display: block;
+  color: red;
+  font-size: var(--fonte-sm);
+  margin-top: 0.25rem;
+}
+
+
+/* ==================================================
+   3. PÁGINA INICIAL
+   ================================================== */
+
+.pagina-inicial main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#app {
+  grid-column: 1 / 13;
+}
+
+.secao-principal {
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+}
+
+.projetos {
+  grid-column: 1 / 13;
+}
+
+.sobre {
+  grid-column: 1 / 13;
+}
+
+.lista-projetos {
+  display: grid;
+  gap: var(--espaco-xl);
+}
+
+.badge {
+  background-color: var(--cor-sucesso);
+  color: var(--cor-branca);
+  padding: var(--espaco-sm);
+  border-radius: 0.5rem;
+}
+
+.badge-novo {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branca);
+  padding: var(--espaco-sm);
+  border-radius: 0.5rem;
+}
+
+.toast {
+  display: none;
+  position: fixed;
+  bottom: var(--espaco-md);
+  right: var(--espaco-md);
+
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--espaco-md);
+  border-radius: 0.5rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-conteudo {
+  background-color: var(--cor-branca);
+  padding: var(--espaco-lg);
+  border-radius: 0.5rem;
+}
+
+/* ==================================================
+   4. MENU RESPONSIVO DA PÁGINA INICIAL
+   ================================================== */
+
+.menu {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.pagina-inicial .menu-toggle:checked~ul {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .pagina-inicial li:hover .submenu {
+    display: block;
+  }
+}
+
+
+/* ==================================================
+   5. PÁGINA DE CADASTRO
+   ================================================== */
+
+/* Navegação específica do cadastro */
+
+.pagina-cadastro nav {
+  justify-content: flex-end;
+  gap: var(--espaco-md);
+}
+
+/* Formulário */
+
+.pagina-cadastro main {
+  padding: var(--espaco-md);
+}
+
+/* Botão */
+
+.pagina-cadastro button:not(#botao-tema) {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  transition: 0.2s;
+}
+
+/* Estados interativos do botão */
+
+.pagina-cadastro button:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+.pagina-cadastro button:focus {
+  background-color: var(--cor-secundaria);
+}
+
+.pagina-cadastro button:active {
+  transform: scale(0.85);
+}
+
+.pagina-cadastro button:disabled {
+  background-color: var(--cor-neutra-media);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Validação dos campos */
+
+.pagina-cadastro input:user-valid {
+  border-color: var(--cor-sucesso);
+}
+
+.pagina-cadastro input:user-invalid {
+  border-color: var(--cor-erro);
+
+}
+
+/* Alertas */
+
+.alert {
+  display: none;
+  background-color: var(--cor-sucesso);
+  color: var(--cor-branca);
+  padding: var(--espaco-md);
+  border-radius: 0.5rem;
+  margin-top: var(--espaco-md);
+}
+
+/* ==================================================
+   6. RESPONSIVIDADE DA PÁGINA INICIAL
+   ================================================== */
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+  .secao-principal {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: var(--fonte-lg);
+  }
+}
+
+/* Celular / tablet pequeno */
+@media (min-width: 481px) and (max-width: 767px) {
+  .secao-principal {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-projetos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Menu hambúrguer */
+@media (max-width: 767px) {
+  .pagina-inicial nav>ul {
+    display: none;
+  }
+
+  .pagina-inicial .menu {
+    display: block;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .secao-principal {
+    grid-template-columns: 6fr 6fr;
+  }
+
+  .lista-projetos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Notebook */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .secao-principal {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .lista-projetos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop grande / panorâmico */
+@media (min-width: 1440px) {
+  .pagina-inicial main {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .secao-principal {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .lista-projetos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
