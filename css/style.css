@@ -50,10 +50,10 @@ header a {
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--espaco-sm) var(--espaco-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espaco-sm) var(--espaco-md);
 }
 
 nav>ul {
@@ -199,23 +199,12 @@ footer {
    ================================================== */
 
 .menu {
-  display: none;
+    display: none;
 }
 
 .menu-toggle {
-  display: none;
+    display: none;
 }
-
-.pagina-inicial .menu-toggle:checked~ul {
-  display: flex;
-}
-
-@media (min-width: 768px) {
-  .pagina-inicial li:hover .submenu {
-    display: block;
-  }
-}
-
 
 /* ==================================================
    5. PÁGINA DE CADASTRO
@@ -290,71 +279,99 @@ footer {
 
 /* Celular pequeno */
 @media (max-width: 480px) {
-  .secao-principal {
-    grid-template-columns: 1fr;
-  }
+    .secao-principal {
+        grid-template-columns: 1fr;
+    }
 
-  h1 {
-    font-size: var(--fonte-lg);
-  }
+    h1 {
+        font-size: var(--fonte-lg);
+    }
 }
 
 /* Celular / tablet pequeno */
 @media (min-width: 481px) and (max-width: 767px) {
-  .secao-principal {
-    grid-template-columns: 1fr;
-  }
+    .secao-principal {
+        grid-template-columns: 1fr;
+    }
 
-  .lista-projetos {
-    grid-template-columns: 1fr;
-  }
+    .lista-projetos {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Menu hambúrguer */
 @media (max-width: 767px) {
-  .pagina-inicial nav>ul {
-    display: none;
-  }
+    .pagina-inicial nav {
+        flex-wrap: wrap;
+    }
 
-  .pagina-inicial .menu {
-    display: block;
-  }
+    .pagina-inicial .logo {
+        flex: 1;
+        white-space: nowrap;
+    }
+
+    .pagina-inicial .menu {
+        display: block;
+        order: 2;
+        cursor: pointer;
+        color: var(--cor-branca);
+        padding: var(--espaco-sm);
+    }
+
+    .pagina-inicial #botao-tema {
+        order: 3;
+    }
+
+    .pagina-inicial nav > ul {
+        display: none;
+        width: 100%;
+        flex: 0 0 100%;
+        order: 4;
+        flex-direction: column;
+        gap: var(--espaco-md);
+        margin-top: var(--espaco-md);
+        align-items: center;
+    }
+
+    .pagina-inicial .menu-toggle:checked ~ ul {
+        display: flex;
+    }
 }
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .secao-principal {
-    grid-template-columns: 6fr 6fr;
-  }
+    .secao-principal {
+        grid-template-columns: 6fr 6fr;
+    }
 
-  .lista-projetos {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .lista-projetos {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Notebook */
 @media (min-width: 1024px) and (max-width: 1439px) {
-  .secao-principal {
-    grid-template-columns: 5fr 7fr;
-  }
+    .secao-principal {
+        grid-template-columns: 5fr 7fr;
+    }
 
-  .lista-projetos {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .lista-projetos {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Desktop grande / panorâmico */
 @media (min-width: 1440px) {
-  .pagina-inicial main {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
+    .pagina-inicial main {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 
-  .secao-principal {
-    grid-template-columns: 5fr 7fr;
-  }
+    .secao-principal {
+        grid-template-columns: 5fr 7fr;
+    }
 
-  .lista-projetos {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .lista-projetos {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
